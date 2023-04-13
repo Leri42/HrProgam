@@ -1,0 +1,66 @@
+﻿@model Employee
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Add New Employee</h2>
+			<hr />
+		</div>
+		<div asp-validation-summary="All"></div>
+		<div>
+			<label asp-for="Name"></label>
+			<input asp-for="Name" class="form-control"/>
+			<span asp-validation-for="Name" class="text-danger"></span>
+		</div>
+		<div>
+			<label asp-for="Surname"></label>
+			<input asp-for="Surname" class="form-control"/>
+			<span asp-validation-for="Surname" class="text-danger"></span>
+		</div>
+		<div>
+			<label asp-for="PersonalIdentityNumber"></label>
+			<input asp-for="PersonalIdentityNumber" class="form-control"/>
+			<span asp-validation-for="PersonalIdentityNumber" class="text-danger"></span>
+		</div>
+		<div>
+			<label asp-for="Gender" ></label>
+			<select asp-for="Gender" asp-items="Html.GetEnumSelectList<Gender>()">
+			 <option selected="selected" value="">Please select</option>
+			</select>
+			<span asp-validation-for="Gender" class="text-danger"></span>
+		</div>
+		<div>
+			<label asp-for="BirthDate"></label>
+			<input asp-for="BirthDate" class="form-control"/>
+			<span asp-validation-for="BirthDate" class="text-danger"></span>
+		</div>
+		<div>
+			<label asp-for="Position"></label>
+			<input asp-for="Position" class="form-control"/>
+			<span asp-validation-for="Position" class="text-danger"></span>
+		</div>
+		<div>
+			<label asp-for="Status"></label>
+			<select asp-for="Status" asp-items="Html.GetEnumSelectList<EmploymentStatus>()">
+				 <option selected="selected" value="">Please-select</option>
+			</select>
+			<span asp-validation-for="Status" class="text-danger"></span>
+		</div>
+		<div>
+			<label asp-for="ReleaseDate"></label>
+			<input asp-for="ReleaseDate" class="form-control"/>
+		</div>
+		<div>
+			<label asp-for="MobileNumber"></label>
+			<input asp-for="MobileNumber" class="form-control"/>
+			<span asp-validation-for="MobileNumber" class="text-danger"></span>
+		</div>
+		<div class="mt-3">
+		<button type="submit" class="btn btn-primary" style="width:150px">Add</button>
+		<a asp-controller="Employee" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Back to list
+		</a>
+		</div>
+	</div>
+</form>
+
